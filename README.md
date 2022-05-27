@@ -2,8 +2,6 @@
 
 Here, we have a couple of informations (the basics) about Hunter X Hunter and author: YOSHIHIRO TOGASHI.
 
-<img width="1406" alt="swag" src="/home.png">
-
 ## Built With
 
 - [Supabase](https://supabase.com)
