@@ -53,7 +53,7 @@ export default function Gallery({ images }: { images: Image[] }) {
 
           <div className="mt-8">
             <span className="mb-14 text-2xl font-medium">
-              Latest TOGASHI images from his twitter profile
+              Latest Togashi images from his twitter profile
             </span>
           </div>
         </div>
