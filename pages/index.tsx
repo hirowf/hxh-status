@@ -4,46 +4,55 @@ import { createClient } from '@supabase/supabase-js'
 import { DateTime } from 'luxon'
 
 export async function getStaticProps() {
-  // const supabaseAdmin = createClient(
-  //   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  //   process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-  // )
+  const supabaseAdmin = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+    process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+  )
 
   // Temporary workround
-  const data = [
-    {
-      name: 'Yoshiro Togashi',
-      href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1528987173927522304/photo/1',
-      username: '@Un4v5s8bgsVk9Xp',
-      imageSrc:
-        'https://pbs.twimg.com/media/FTgNunjVsAAYY09?format=jpg&name=large',
-      time: '3:32 AM · May 24, 2022',
-    },
-    {
-      name: 'Yoshiro Togashi',
-      href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1529260655236091904/photo/1',
-      username: '@Un4v5s8bgsVk9Xp',
-      imageSrc:
-        'https://pbs.twimg.com/media/FTkGdX7UAAA7ogl?format=jpg&name=large',
-      time: '12:17 AM · May 26, 2022',
-    },
-    {
-      name: 'Yoshiro Togashi',
-      href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1529663083605397504/photo/1',
-      username: '@Un4v5s8bgsVk9Xp',
-      imageSrc:
-        'https://pbs.twimg.com/media/FTp0dzGUEAAo0QN?format=jpg&name=large',
-      time: '9:38 PM · May 24, 2022',
-    },
-    {
-      name: 'Yoshiro Togashi',
-      href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1530022135413952512/photo/1',
-      username: '@Un4v5s8bgsVk9Xp',
-      imageSrc:
-        'https://pbs.twimg.com/media/FTu7BZjUsAAS1xJ?format=jpg&name=large',
-      time: '12:04 AM · May 27, 2022',
-    },
-  ]
+  //   const data = [
+  //     {
+  //       name: 'Yoshiro Togashi',
+  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1528987173927522304/photo/1',
+  //       username: '@Un4v5s8bgsVk9Xp',
+  //       imageSrc:
+  //         'https://pbs.twimg.com/media/FTgNunjVsAAYY09?format=jpg&name=large',
+  //       time: '3:32 AM · May 24, 2022',
+  //     },
+  //     {
+  //       name: 'Yoshiro Togashi',
+  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1529260655236091904/photo/1',
+  //       username: '@Un4v5s8bgsVk9Xp',
+  //       imageSrc:
+  //         'https://pbs.twimg.com/media/FTkGdX7UAAA7ogl?format=jpg&name=large',
+  //       time: '12:17 AM · May 26, 2022',
+  //     },
+  //     {
+  //       name: 'Yoshiro Togashi',
+  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1529663083605397504/photo/1',
+  //       username: '@Un4v5s8bgsVk9Xp',
+  //       imageSrc:
+  //         'https://pbs.twimg.com/media/FTp0dzGUEAAo0QN?format=jpg&name=large',
+  //       time: '9:38 PM · May 24, 2022',
+  //     },
+  //     {
+  //       name: 'Yoshiro Togashi',
+  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1530022135413952512/photo/1',
+  //       username: '@Un4v5s8bgsVk9Xp',
+  //       imageSrc:
+  //         'https://pbs.twimg.com/media/FTu7BZjUsAAS1xJ?format=jpg&name=large',
+  //       time: '12:04 AM · May 27, 2022',
+  //     },
+  //   ]
+  //   return {
+  //     props: {
+  //       images: data,
+  //     },
+  //   }
+  // }
+
+  const { data } = await supabaseAdmin.from('images').select('*').order('id')
+  console.log(data)
   return {
     props: {
       images: data,
@@ -106,7 +115,7 @@ export default function Gallery({ images }: { images: Image[] }) {
         </div>
 
         <div className="mt-4 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 xl:gap-x-8">
-          <div className="flex grid grid-cols-1 flex-row gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"></div>
+          <div className="grid grid-cols-1 flex-row gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"></div>
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <div>
               <span className="font-bod mt-10 text-2xl">
