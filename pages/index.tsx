@@ -46,7 +46,7 @@ export default function Gallery({ images }: { images: Image[] }) {
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="mb-14">
           <h1 className="text-9xl font-extrabold">HUNTER x HUNTER</h1>
-          <p className="text-right">status</p>
+          <p className="text-right">stats</p>
           <div className="flex w-[500px]">
             <Image src="/quot.png" width="3340" height="269" />
           </div>
