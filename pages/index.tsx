@@ -50,17 +50,6 @@ export default function Gallery({ images }: { images: Image[] }) {
           <div className="flex w-[500px]">
             <Image src="/quot.png" width="3340" height="269" />
           </div>
-
-          <div className="mt-8">
-            <span className="mb-14 text-2xl font-medium">
-              Latest Togashi images from his twitter profile
-            </span>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {images.map((image) => (
-            <BlurImage key={image.id} image={image} />
-          ))}
         </div>
 
         <div className="mt-10 grid grid-cols-1 divide-y">
@@ -105,6 +94,21 @@ export default function Gallery({ images }: { images: Image[] }) {
               </h1>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8">
+          <span className="mb-14 text-2xl font-medium">
+            Latest Togashi images from his twitter profile
+          </span>
+        </div>
+        <div className="mt-10 grid grid-cols-1 divide-y">
+          <div></div>
+          <div></div>
+        </div>
+        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {images.map((image) => (
+            <BlurImage key={image.id} image={image} />
+          ))}
         </div>
         <div className="mt-10 grid grid-cols-1 divide-y">
           <div></div>
