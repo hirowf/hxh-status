@@ -9,48 +9,6 @@ export async function getStaticProps() {
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   )
 
-  // Temporary workround
-  //   const data = [
-  //     {
-  //       name: 'Yoshiro Togashi',
-  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1528987173927522304/photo/1',
-  //       username: '@Un4v5s8bgsVk9Xp',
-  //       imageSrc:
-  //         'https://pbs.twimg.com/media/FTgNunjVsAAYY09?format=jpg&name=large',
-  //       time: '3:32 AM · May 24, 2022',
-  //     },
-  //     {
-  //       name: 'Yoshiro Togashi',
-  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1529260655236091904/photo/1',
-  //       username: '@Un4v5s8bgsVk9Xp',
-  //       imageSrc:
-  //         'https://pbs.twimg.com/media/FTkGdX7UAAA7ogl?format=jpg&name=large',
-  //       time: '12:17 AM · May 26, 2022',
-  //     },
-  //     {
-  //       name: 'Yoshiro Togashi',
-  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1529663083605397504/photo/1',
-  //       username: '@Un4v5s8bgsVk9Xp',
-  //       imageSrc:
-  //         'https://pbs.twimg.com/media/FTp0dzGUEAAo0QN?format=jpg&name=large',
-  //       time: '9:38 PM · May 24, 2022',
-  //     },
-  //     {
-  //       name: 'Yoshiro Togashi',
-  //       href: 'https://twitter.com/Un4v5s8bgsVk9Xp/status/1530022135413952512/photo/1',
-  //       username: '@Un4v5s8bgsVk9Xp',
-  //       imageSrc:
-  //         'https://pbs.twimg.com/media/FTu7BZjUsAAS1xJ?format=jpg&name=large',
-  //       time: '12:04 AM · May 27, 2022',
-  //     },
-  //   ]
-  //   return {
-  //     props: {
-  //       images: data,
-  //     },
-  //   }
-  // }
-
   const { data } = await supabaseAdmin.from('images').select('*').order('id')
   console.log(data)
   return {
@@ -74,7 +32,6 @@ type Image = {
 }
 
 export default function Gallery({ images }: { images: Image[] }) {
-  // diff days between 26, november 2018 until now
   const [days, setDays] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
 
@@ -83,9 +40,6 @@ export default function Gallery({ images }: { images: Image[] }) {
   const date2 = new Date().getTime()
   const diffTime = Math.abs(date1.getTime() - date2)
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-  console.log(diffTime + ' milliseconds')
-  console.log(diffDays + ' days')
-  console.log(lastRelease.toFormat('dd/MM/yyyy'))
 
   return (
     <>
