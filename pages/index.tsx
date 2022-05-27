@@ -113,7 +113,10 @@ export default function Gallery({ images }: { images: Image[] }) {
                 Latest volume released:
               </span>
               <div className="mt-10 cursor-pointer">
-                <a href="">
+                <a
+                  href="https://www.shonenjump.com/j/rensai/list/hunter.html"
+                  target="_blank"
+                >
                   <Image src="/last_volu.jpeg" width="385" height="604" />
                 </a>
               </div>
@@ -122,17 +125,19 @@ export default function Gallery({ images }: { images: Image[] }) {
               <span className="font-bod  text-2xl ">
                 Last chapter released:
               </span>
-              <h1 className="mt-10 text-7xl font-bold">390</h1>
+              <h1 className="mt-10 cursor-pointer text-7xl font-bold">390</h1>
             </div>
             <div>
               <span className="font-bod text-2xl ">
                 Day since the last chapter:
               </span>
-              <h1 className="mt-10 text-7xl font-bold ">{diffDays}</h1>
+              <h1 className="mt-10 cursor-pointer text-7xl font-bold">
+                {diffDays}
+              </h1>
             </div>
             <div>
               <span className="font-bod text-2xl">Last released:</span>
-              <h1 className="mt-10 text-4xl font-bold">
+              <h1 className="mt-10 cursor-pointer text-4xl font-bold">
                 {lastRelease.toFormat('LLL dd, yyyy')}
               </h1>
             </div>
@@ -156,7 +161,7 @@ export default function Gallery({ images }: { images: Image[] }) {
         </span>
         &nbsp; by &nbsp;
         <a
-          className="text-blue-500 hover:text-blue-700"
+          className="cursor-pointer text-blue-500 hover:text-blue-700"
           href="https://twitter.com/hirowf"
           target="_blank"
         >
