@@ -1,4 +1,4 @@
-# Hunter Hunter Info Gallery
+# Hunter Hunter Info Gallery 
 
 Here, we have a couple of informations (the basics) about Hunter X Hunter and author: YOSHIHIRO TOGASHI.
 
