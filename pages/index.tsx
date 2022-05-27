@@ -9,6 +9,7 @@ export async function getStaticProps() {
   //   process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   // )
 
+  // Temporary workround
   const data = [
     {
       name: 'Yoshiro Togashi',
