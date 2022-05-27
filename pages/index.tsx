@@ -104,7 +104,7 @@ export default function Gallery({ images }: { images: Image[] }) {
           <div></div>
         </div>
 
-        <div className="mt-4 grid grid-cols-1 gap-y-10 gap-x-6 divide-x sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 xl:gap-x-8">
+        <div className="mt-4 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 xl:gap-x-8">
           <div className="flex grid grid-cols-1 flex-row gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"></div>
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             <div>
@@ -138,7 +138,6 @@ export default function Gallery({ images }: { images: Image[] }) {
           </div>
         </div>
         <div className="mt-10 grid grid-cols-1 divide-y">
-          <div></div>
           <div></div>
         </div>
         <div className="mt-14">
