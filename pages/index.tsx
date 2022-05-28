@@ -35,9 +35,6 @@ type Image = {
 }
 
 export default function Gallery({ images }: { images: Image[] }) {
-  const [days, setDays] = useState(0)
-  const [isLoading, setIsLoading] = useState(true)
-
   const lastRelease = DateTime.fromISO('2018-11-26')
   const date1 = new Date('11/26/2018')
   const date2 = new Date().getTime()
@@ -48,8 +45,12 @@ export default function Gallery({ images }: { images: Image[] }) {
     <>
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="mb-14">
-          <h1 className="text-9xl font-extrabold">HUNTER x HUNTER</h1>
-          <p className="text-right">stats</p>
+          <h1 className="text-7xl font-extrabold sm:text-9xl">
+            HUNTER x HUNTER
+          </h1>
+          <div className="my-2 flex w-3 items-center justify-center rounded-xl bg-green-300 px-10">
+            <p className="text-right">status</p>
+          </div>
           <div className="flex w-[500px]">
             <Image src="/quot.png" width="3340" height="269" />
           </div>
@@ -107,9 +108,7 @@ export default function Gallery({ images }: { images: Image[] }) {
             <BlurImage key={image.id} image={image} />
           ))}
         </div>
-        <div className="mt-10 grid grid-cols-1 divide-y">
-          <div></div>
-        </div>
+        <hr className="mt-10" />
         <div className="mt-14">
           <h1 className="mb-14 text-2xl font-medium">
             HUNTER×HUNTER Hiatus Chart
