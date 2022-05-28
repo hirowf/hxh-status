@@ -35,9 +35,6 @@ type Image = {
 }
 
 export default function Gallery({ images }: { images: Image[] }) {
-  const [days, setDays] = useState(0)
-  const [isLoading, setIsLoading] = useState(true)
-
   const lastRelease = DateTime.fromISO('2018-11-26')
   const date1 = new Date('11/26/2018')
   const date2 = new Date().getTime()
