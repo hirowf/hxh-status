@@ -9,8 +9,11 @@ export async function getStaticProps() {
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   )
 
-  const { data } = await supabaseAdmin.from('images').select('*').order('id')
-  console.log(data)
+  const { data } = await supabaseAdmin
+    .from('images')
+    .select('*')
+    .order('id', { ascending: false })
+
   return {
     props: {
       images: data,
@@ -51,12 +54,7 @@ export default function Gallery({ images }: { images: Image[] }) {
             <Image src="/quot.png" width="3340" height="269" />
           </div>
         </div>
-
-        <div className="mt-10 grid grid-cols-1 divide-y">
-          <div></div>
-          <div></div>
-        </div>
-
+        <hr />
         <div className="mt-4 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 xl:gap-x-8">
           <div className="grid grid-cols-1 flex-row gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"></div>
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
@@ -96,16 +94,15 @@ export default function Gallery({ images }: { images: Image[] }) {
           </div>
         </div>
 
+        <hr />
+
         <div className="mt-8">
           <span className="mb-14 text-2xl font-medium">
-            Latest Togashi images from his twitter profile
+            Latest Togashi Updates:
           </span>
         </div>
-        <div className="mt-10 grid grid-cols-1 divide-y">
-          <div></div>
-          <div></div>
-        </div>
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+
+        <div className="mt-10 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {images.map((image) => (
             <BlurImage key={image.id} image={image} />
           ))}
