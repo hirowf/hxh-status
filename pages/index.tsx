@@ -125,7 +125,7 @@ export default function Gallery({ images }: { images: Image[] }) {
         &nbsp; by &nbsp;
         <a
           className="cursor-pointer text-blue-500 hover:text-blue-700"
-          href="https://twitter.com/hirowf"
+          href=""
           target="_blank"
         >
           @hirowf
