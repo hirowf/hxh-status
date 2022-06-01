@@ -80,7 +80,7 @@ export default function Gallery({ images }: { images: Image[] }) {
             </div>
             <div>
               <span className="font-bod text-2xl ">
-                Days since the last chapter:
+                Day since the last chapter:
               </span>
               <h1 className="mt-10 cursor-pointer text-7xl font-bold">
                 {diffDays}
